@@ -1,18 +1,29 @@
 @charset "UFT-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+:root{
+    --cor01:#051a26;
+    --cor02:#007854;
+    --cor03:#ffffff;
+    --cor04:#063433;
+    --cor05:#36d8c3;
+    --font: "Montserrat", sans-serif;
+}
 
 *{
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font);
 }
 
 header{
     position: relative;
     display: flex;
     justify-content: space-between;
-    background-color: gray;
+    background-color: var(--cor01);
     height: 90px;
     width: 100%;
     padding: 10px;
@@ -30,13 +41,13 @@ div#logo-cl{
     display: flex;
     align-items: center;
     gap: 2px;
-    left: 10px;
+    left: 30px;
 
 }
 
 div#logo-cl > span{
     position: relative;
-    background-color: blue;
+    background-color: var(--cor03);
     width: 10px;
     height: 30px;
     border-radius: 7px; 
@@ -44,30 +55,31 @@ div#logo-cl > span{
 
 #span-01{
     position: absolute;
-    top: 7px;
+    top: 8px;
 }
 #span-02{
     position: absolute;
-    top: -7px;
+    top: -8px;
 }
 
 div#Portifolio-CL{
     display: flex;
     position: relative;
     align-items: center;
+    color: var(--cor03);
     font-size: 1.3em;
-    left: 20px;
+    left: 40px;
 }
 
 div#Portifolio-CL strong{
-    color:brown;
+    color: var(--cor02);
 }
 
 div#Menu-nav{
     display: flex;
     position: relative;
     align-items: center;
-    right: 40px;
+    right: 60px;
 }
 
 div#Menu-nav > nav {
@@ -84,27 +96,40 @@ div#Menu-nav > nav >ul{
 
 div#Menu-nav > nav >ul >li{
     font-size: 1.3em;
+    font-weight: bold;
 }
 
 div#Menu-nav > nav >ul >li >a{
     text-decoration: none;
-    color: black;
+    color: var(--cor03);
+}
+
+div#Menu-nav > nav >ul >li >a:hover{
+    color: var(--cor02);
+    transition: ease-out .3s;
+    text-decoration: underline;
 }
 
 div#Contado{
     position: relative;
     display: flex;
     align-items: center;
-    right: 30px;
+    right: 50px;
 }
 div#Contado >p{
     font-size: 1.3em;
     border: 1px solid black;
     border-radius: 10px;
     padding: 7px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, var(--cor04), var(--cor05));
 }
 
 div#Contado >p >a{
     text-decoration: none;
-    color: black;
+    color: var(--cor03);
+}
+
+div#Contado >p:hover{
+    background-image: linear-gradient(to right, var(--cor05), var(--cor04));
 }
