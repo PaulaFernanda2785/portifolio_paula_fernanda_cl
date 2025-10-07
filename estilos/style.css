@@ -1,0 +1,110 @@
+@charset "UFT-8";
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+    height: 90px;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    transition: none 3s;
+}
+
+header >div{
+    position: relative;
+    display: flex;
+}
+
+div#logo-cl{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    left: 10px;
+
+}
+
+div#logo-cl > span{
+    position: relative;
+    background-color: blue;
+    width: 10px;
+    height: 30px;
+    border-radius: 7px; 
+}
+
+#span-01{
+    position: absolute;
+    top: 7px;
+}
+#span-02{
+    position: absolute;
+    top: -7px;
+}
+
+div#Portifolio-CL{
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-size: 1.3em;
+    left: 20px;
+}
+
+div#Portifolio-CL strong{
+    color:brown;
+}
+
+div#Menu-nav{
+    display: flex;
+    position: relative;
+    align-items: center;
+    right: 40px;
+}
+
+div#Menu-nav > nav {
+    display: flex;
+    position: relative;
+}
+
+div#Menu-nav > nav >ul{
+    list-style: none;
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+div#Menu-nav > nav >ul >li{
+    font-size: 1.3em;
+}
+
+div#Menu-nav > nav >ul >li >a{
+    text-decoration: none;
+    color: black;
+}
+
+div#Contado{
+    position: relative;
+    display: flex;
+    align-items: center;
+    right: 30px;
+}
+div#Contado >p{
+    font-size: 1.3em;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+div#Contado >p >a{
+    text-decoration: none;
+    color: black;
+}
