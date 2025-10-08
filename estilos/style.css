@@ -13,11 +13,15 @@
     --font: "Montserrat", sans-serif;
 }
 
+/*=====CSS GLOBAL=====*/
+
 *{
     margin: 0px;
     padding: 0px;
     font-family: var(--font);
 }
+
+/*=====CSS HERADER=====*/
 
 header{
     position: relative;
@@ -29,6 +33,11 @@ header{
     padding: 10px;
     position: fixed;
     transition: none 3s;
+}
+
+header.transparent {
+    background-color: rgba(5, 26, 38, 0.8);
+    transition: background-color 0.3s ease;
 }
 
 header >div{
@@ -67,7 +76,7 @@ div#Portifolio-CL{
     position: relative;
     align-items: center;
     color: var(--cor03);
-    font-size: 1.3em;
+    font-size: 1.2em;
     left: 40px;
 }
 
@@ -95,19 +104,31 @@ div#Menu-nav > nav >ul{
 }
 
 div#Menu-nav > nav >ul >li{
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
 div#Menu-nav > nav >ul >li >a{
+    position: relative;
     text-decoration: none;
+    overflow: hidden;
     color: var(--cor03);
 }
 
-div#Menu-nav > nav >ul >li >a:hover{
-    color: var(--cor02);
-    transition: ease-out .3s;
-    text-decoration: underline;
+div#Menu-nav > nav >ul >li >a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--cor02);
+    transition: width 0.3s ease;
+}
+
+div#Menu-nav > nav >ul >li >a:hover::after {
+    width: 100%;
+    transition: width 0.3s ease;
 }
 
 div#Contado{
@@ -117,7 +138,9 @@ div#Contado{
     right: 50px;
 }
 div#Contado >p{
-    font-size: 1.3em;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.2em;
     border: 1px solid black;
     border-radius: 10px;
     padding: 7px;
@@ -126,10 +149,45 @@ div#Contado >p{
 }
 
 div#Contado >p >a{
+    position: relative;
     text-decoration: none;
     color: var(--cor03);
 }
 
+div#Contado >p::after{
+    border-bottom: 2px solid var(--cor01);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+div#Contado >p:hover::after{
+    width: 100%;
+    background-color: var(--cor03);
+    transition: width 0.3s ease;
+}
+
 div#Contado >p:hover{
     background-image: linear-gradient(to right, var(--cor05), var(--cor04));
+    transition: background-image 0.3s ease;
 }
+
+
+/*======CSS MAIN*======/
+
+/*======CSS SECTION HOME=====*/
+
+main{
+    padding-top: 110px;
+}
+
+main > section#home{
+    display: flex;
+    background-color:var(--cor01);
+}
+
