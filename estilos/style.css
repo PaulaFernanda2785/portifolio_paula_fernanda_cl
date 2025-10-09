@@ -192,22 +192,49 @@ div#img-01{
 
 div#img-01 > img{
     position: absolute;
-    min-width: 90%;
-    max-width: 90%;
-    top: 50%;
+    min-width: 70%;
+    max-width: 60%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-Div#coteudo-01{
+Div#coteudo-01 {
     position: relative;
-    padding-top: 80px;
+    left: 50%;
+    transform: translate(-109%, 5%);
+    padding-top: 5vh;
+    min-width: 40%;
+    max-width: 90%;
 }
 
 Div#coteudo-01 >h1{
-    font-size: 2em;
+    font-size: clamp(2rem, 4vw, 2rem);
     text-align: left;
     max-width: 480px;
     min-width: 480px;
     color: var(--cor03);
+}
+
+Div#coteudo-01 >p{
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--cor03);
+    text-align: justify;
+    max-width: 560px;
+    min-width: 480px;
+    margin-top: 60px;
+}
+
+div#logo-social{
+    max-width: 560px;
+    min-width: 480px;
+    margin-top: 60px;
+}
+
+div#logo-social > a{
+    padding: 10px;
+}
+
+div#logo-social img{
+    width: 40px;
 }
