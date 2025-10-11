@@ -184,6 +184,9 @@ main > section#home{
     height: 100vh;
     background-color:var(--cor01);
 }
+main > section#home strong{
+    color: var(--cor02);
+}
 /*===IMAGEM PRINCIPAL=====*/
 div#img-01{
     position: relative;
@@ -232,9 +235,31 @@ div#logo-social{
 }
 
 div#logo-social > a{
-    padding: 10px;
+    padding: 0px 30px 0px 0px;
 }
 
 div#logo-social img{
-    width: 40px;
+    width: 50px;
+}
+
+div#logo-social span img{
+    width: 200px;
+}
+/*===== EFEITO DE DIGITAÇÃO=====*/
+strong.typing{/* Definindo estilo para o efeito de digitação */
+    display: inline-flex;/* Impedindo quebra de linha */
+    white-space: nowrap;/* Impedindo quebra de linha */
+    overflow: hidden;/* Ocultando o texto que ultrapassa o limite */
+    border-right: 0.12em solid var(--cor05);/* Cursor do efeito de digitação */
+    animation: 
+        typing 3s steps(25, end) 1s infinite alternate,
+        blink-caret 0.7s step-end infinite;/* Efeito de piscar o cursor */
+}
+@keyframes blink-caret{
+    from, to{border-color: transparent;}/* Impedindo quebra de linha */
+    50%{border-color: var(--cor05);}/* Cor do cursor */
+}
+@keyframes typing{
+    from{width: 0ch;}/* Início do efeito de digitação */
+    to{width: 25ch;}/* Fim do efeito de digitação */
 }
