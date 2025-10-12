@@ -185,6 +185,9 @@ main{
     padding-top: 90px;
 }
 
+
+
+/*===SECTION HOME=====*/
 main > section#home{
     position: relative;
     display: flex;
@@ -276,7 +279,12 @@ div#logo-social img:hover{
     box-shadow: 3px 3px 8px #00785444;
 }
 
+/*===SECTION SERVIÇOS=====*/
 
+
+
+
+/*===RODAPÉ=====*/
     footer {
         display: flex;
         position: relative;
