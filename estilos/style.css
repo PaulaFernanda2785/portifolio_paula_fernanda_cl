@@ -10,6 +10,7 @@
     --cor03:#ffffff;
     --cor04:#063433;
     --cor05:#36d8c3;
+    --cor06:#12ff90;
     --font: "Montserrat", sans-serif;
 }
 
@@ -87,7 +88,7 @@ div#Portifolio-CL{
 }
 
 div#Portifolio-CL strong{
-    color: var(--cor02);
+    color: var(--cor06);
 }
 /* ====Menu de navegação==== */
 div#Menu-nav{
@@ -146,7 +147,7 @@ div#Contado >p{
     border-radius: 10px;
     padding: 7px 15px;
     font-weight: bold;
-    background-image: linear-gradient(to right, var(--cor04), var(--cor05));
+    background-image: linear-gradient(to right, var(--cor04), var(--cor02));
 }
 
 div#Contado >p >a{
@@ -161,7 +162,7 @@ div#Contado >p::after{
     bottom: -2px;
     width: 0;
     height: 2px;
-    border-bottom: 2px solid var(--cor01);
+    border-bottom: 2px solid var(--cor06);
     border-radius: 10px;
     transition: width 0.3s ease;
 }
@@ -172,7 +173,7 @@ div#Contado >p:hover::after{
 }
 
 div#Contado >p:hover{
-    background-image: linear-gradient(to right, var(--cor05), var(--cor04));
+    background-image: linear-gradient(to right, var(--cor02), var(--cor04));
     transition: background-image 0.3s ease;
 }
 
@@ -195,7 +196,7 @@ main > section#home{
     background-color:var(--cor01);
 }
 main > section#home strong{
-    color: var(--cor02);
+    color: var(--cor06);
 }
 /*===IMAGEM PRINCIPAL=====*/
 div#img-01{
@@ -268,7 +269,7 @@ strong.typing{/* Definindo estilo para o efeito de digitação */
 }
 @keyframes blink-caret{
     from, to{border-color: transparent;}/* Impedindo quebra de linha */
-    50%{border-color: var(--cor05);}/* Cor do cursor */
+    50%{border-color: var(--cor03);}/* Cor do cursor */
 }
 @keyframes typing{
     from{width: 0ch;}/* Início do efeito de digitação */
@@ -276,7 +277,7 @@ strong.typing{/* Definindo estilo para o efeito de digitação */
 }
 
 div#logo-social img:hover{
-    box-shadow: 3px 3px 8px #00785444;
+    box-shadow: 3px 3px 8px #12ff903d;
 }
 
 /*===SECTION SERVIÇOS=====*/
@@ -299,7 +300,7 @@ div#logo-social img:hover{
         margin-top: 30px;
     }
     footer strong > a {
-        color: var(--cor02);
+        color: var(--cor06);
         text-decoration: none;
     }
 
