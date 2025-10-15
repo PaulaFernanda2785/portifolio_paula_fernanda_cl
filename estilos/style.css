@@ -277,7 +277,7 @@ strong.typing{/* Definindo estilo para o efeito de digitação */
 }
 
 div#logo-social img:hover{
-    box-shadow: 3px 3px 8px #12ff903d;
+    box-shadow: 3px 0px 8px rgba(18, 255, 144, 0.200);
 }
 
 /*===SECTION SERVIÇOS=====*/
