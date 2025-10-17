@@ -24,10 +24,27 @@
 }
 
 html, body{
-    
     background-color: var(--cor01);
     scroll-behavior: smooth;
-    transition: background-color 10s, color 10s;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* evita que o header fixe cubra a seção ao fazer scroll para âncoras */
+section, [id] {
+    scroll-margin-top: 100px; /* ajuste para a altura do seu header (90px) + margem */
+}
+
+/* transição visual para links de navegação */
+div#Menu-nav a,
+footer nav a {
+    transition: color 0.25s ease, opacity 0.25s ease;
+    will-change: color, opacity;
+}
+div#Menu-nav a:focus,
+div#Menu-nav a:active,
+div#Menu-nav a:hover {
+    color: var(--cor06);
+    opacity: 0.95;
 }
 
 /*=====CSS HERADER=====*/
@@ -281,7 +298,31 @@ div#logo-social img:hover{
 }
 
 /*===SECTION SERVIÇOS=====*/
+section#Servicos{
+    position: relative;
+    height: 100vh;
+    padding: 0px 20px;
+}
 
+section#Servicos >h2{
+    color: var(--cor03);
+    font-size: clamp(2rem, 4vw, 2rem);
+}
+
+section#Servicos >p{
+    color: var(--cor03);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-top: 20px;
+}
+
+
+div#cards-servicos{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+}
 
 
 
