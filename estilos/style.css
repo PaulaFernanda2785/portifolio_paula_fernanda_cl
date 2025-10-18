@@ -702,49 +702,54 @@ p.solicitar-servicos:hover{
 
       /* seção: título e parágrafo em fluxo normal (visíveis, não sticky) */
     section#Servicos{
-        height: auto;
-        min-height: calc(100vh - 90px);
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 90px); /* considera header de 90px */
         box-sizing: border-box;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: y mandatory;
-        background: var(--cor01);
         padding: 16px 12px;
+        background: var(--cor01);
     }
 
     section#Servicos > h2 {
-        position: static; /* não sticky */
-        top: auto;
-        z-index: 3;
-        background: transparent;
-        padding: 0 6px 8px 6px;
-        margin: 0 0 6px 0;
+        flex: 0 0 auto;
+        margin: 0 0 8px 0;
+        padding: 0 6px;
         text-align: center;
+        color: var(--cor03);
+        font-size: clamp(1.6rem, 5vw, 2rem);
     }
 
     section#Servicos > p {
-        position: static; /* fica logo abaixo do h2 */
-        z-index: 2;
-        margin: 0 0 18px 0;
-        padding: 0 6px 12px 6px;
+        flex: 0 0 auto;
+        margin: 0 12px 0;
+        padding: 0 6px 6px 6px;
         text-align: center;
+        color: var(--cor03);
+        font-size: clamp(0.76rem, 2vw, 1.2rem);
+        line-height: 1.4;
     }
 
     /* container de cards em coluna, invertido visualmente (último aparece primeiro) */
     div#cards-servicos {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: y mandatory;
         display: flex;
-        flex-direction: column; /* inverte a ordem visual */
-        width: 100%;
+        flex-direction: column;
         gap: 18px;
-        box-sizing: border-box;
         padding: 0;
+        box-sizing: border-box;
     }
 
     /* cada card ocupa praticamente a viewport (visão completa) e usa snap */
     div.card-servicos {
         position: relative;
         top: auto;
+        flex: 0 0 100%;
+        height: calc(100vh - 160px); /* ajuste conforme altura do header + h2+p */
         min-height: 320px;
+        max-height: 420px;
         width: 94%;
         max-width: 520px;
         margin: 0 auto;
@@ -758,9 +763,6 @@ p.solicitar-servicos:hover{
         justify-content: flex-start;
         padding: 18px;
         box-sizing: border-box;
-        z-index: 1;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
     }
 
     div.card-servicos:last-child {
