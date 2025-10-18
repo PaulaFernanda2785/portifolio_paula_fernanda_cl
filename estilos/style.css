@@ -46,7 +46,7 @@ footer nav a {
 div#Menu-nav a:focus,
 div#Menu-nav a:active,
 div#Menu-nav a:hover {
-    color: var(--cor06);
+    color: var(--cor03);
     opacity: 0.95;
 }
 
@@ -304,7 +304,7 @@ div#logo-social img:hover{
 section#Servicos{
     position: relative;
     height: 100vh;
-    padding: 0px 20px;
+    padding: 0px 30px;
 }
 
 section#Servicos >h2{
@@ -323,16 +323,15 @@ div#cards-servicos{
     position: relative;
     display: flex;
     justify-content: space-around;
+    margin-top: 60px;
     gap: 40px;
-    margin-top: 20px;
 }
 
 div.card-servicos{
     background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card02),var(--cor-card03), var(--cor-card01));
-    width: 300px;
+    width: 320px;
     padding: 10px;
-    margin-top: 80px;
-    box-shadow: 3px 1px 6px rgba(18, 255, 144, 0.200);;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
 }
 
 div.card-servicos >h3{
@@ -700,7 +699,7 @@ p.solicitar-servicos:hover{
 
     /*====SECTION SERVIÇOS====*/
 
-      /* seção: título e parágrafo em fluxo normal (visíveis, não sticky) */
+    /* seção: título e parágrafo em fluxo normal (visíveis, não sticky) */
     section#Servicos{
         display: flex;
         flex-direction: column;
@@ -725,11 +724,10 @@ p.solicitar-servicos:hover{
         padding: 0 6px 6px 6px;
         text-align: center;
         color: var(--cor03);
-        font-size: clamp(0.76rem, 2vw, 1.2rem);
+        font-size: clamp(0.83rem, 2vw, 1.2rem);
         line-height: 1.4;
     }
 
-    /* container de cards em coluna, invertido visualmente (último aparece primeiro) */
     div#cards-servicos {
         flex: 1 1 auto;
         overflow-y: auto;
@@ -742,7 +740,6 @@ p.solicitar-servicos:hover{
         box-sizing: border-box;
     }
 
-    /* cada card ocupa praticamente a viewport (visão completa) e usa snap */
     div.card-servicos {
         position: relative;
         top: auto;
@@ -756,7 +753,7 @@ p.solicitar-servicos:hover{
         scroll-snap-align: start;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.35);
         background-image: linear-gradient(to right, var(--cor-card01), var(--cor-card02), var(--cor-card03));
         display: flex;
         flex-direction: column;
