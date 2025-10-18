@@ -11,6 +11,9 @@
     --cor04:#063433;
     --cor05:#36d8c3;
     --cor06:#12ff90;
+    --cor-card01:#051a26;
+    --cor-card02:#233941;
+    --cor-card03:#0b212c;
     --font: "Montserrat", sans-serif;
 }
 
@@ -312,17 +315,105 @@ section#Servicos >h2{
 section#Servicos >p{
     color: var(--cor03);
     font-size: clamp(1rem, 2vw, 1.5rem);
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 
 div#cards-servicos{
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 40px;
     margin-top: 20px;
 }
+
+div.card-servicos{
+    background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card02),var(--cor-card03), var(--cor-card01));
+    width: 300px;
+    padding: 10px;
+    margin-top: 80px;
+    box-shadow: 3px 1px 6px rgba(18, 255, 144, 0.200);;
+}
+
+div.card-servicos >h3{
+    color: var(--cor03);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+div.card-servicos >p{
+    color: var(--cor03);
+    text-align: left;
+    font-size:clamp(1rem, 1vw, 1rem);
+    margin-top: 20px;
+    height: 100px;
+    line-height: 1.5em;
+}
+
+div.card-servicos >ul{
+    padding: 20px;
+    color: var(--cor03);
+    line-height: 1.5em;
+}
+
+div.card-servicos >hr{
+    border: none; /* remove borda padrão */
+    border-top: 2px dotted rgba(255,255,255,0.15); /* linha pontilhada — ajuste cor/alpha conforme necessário */
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div.preco-solicitar{
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+
+p.preco-servicos{
+    color: var(--cor03);
+    font-size:clamp(1rem, 1vw, 1.3rem);
+    font-weight: bolder;
+}
+
+p.solicitar-servicos{
+    position: relative;
+    overflow: hidden;
+    border: 1px transparent black;
+    padding: 8px;
+    margin-top: -5px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, var(--cor04), var(--cor02));
+}
+
+p.solicitar-servicos >a{
+    text-decoration: none;
+    font-size:clamp(1rem, 1vw, 1.1rem);
+    color: var(--cor03);
+    font-weight: bolder;
+}
+
+p.solicitar-servicos::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    border-bottom: 2px solid var(--cor06);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+p.solicitar-servicos:hover::after{
+    width: 100%;
+    background-color: var(--cor03);
+}
+
+p.solicitar-servicos:hover{
+    background-image: linear-gradient(to right, var(--cor02), var(--cor04));
+    transition: background-image 0.3s ease;
+}
+
 
 
 
@@ -607,6 +698,58 @@ div#cards-servicos{
         width: 120px;
     }
 
+    /*====SECTION SERVIÇOS====*/
+    section#Servicos {
+        height: calc(100vh - 90px); /* considera header fixo de 90px */
+        padding-top: 20vh;          /* deixa 20% visível do card superior */
+        box-sizing: border-box;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        -webkit-overflow-scrolling: touch; /* rolagem suave no iOS */
+        display: block;
+        background: var(--cor01);
+    }
+
+    /* container de cards ocupa largura total */
+    div#cards-servicos {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* cada card ocupa 80vh, mas fica sobreposto ao anterior (80% escondido) */
+    div.card-servicos {
+        width: 92%;
+        max-width: 520px;
+        margin: 0 auto;
+        height: 80vh;               /* altura do card */
+        margin-top: -64vh;          /* overlap de 80% -> 0.8 * 80vh = 64vh */
+        scroll-snap-align: start;   /* faz o snap mostrar um card por vez */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        background-image: linear-gradient(to right, var(--cor-card01), var(--cor-card02), var(--cor-card03));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 18px;
+    }
+
+    /* garante espaço final para o último card ser totalmente focado */
+    div.card-servicos:last-child {
+        margin-bottom: 20vh;
+    }
+
+    /* ajustes tipográficos dentro dos cards */
+    div.card-servicos > h3 { font-size: clamp(1.1rem, 4vw, 1.6rem); }
+    div.card-servicos > p,
+    div.card-servicos > ul { font-size: clamp(0.95rem, 3.5vw, 1.1rem); }
+
+    /* evita overflow horizontal */
+    html, body { overflow-x: hidden; 
+    }
+
         footer {
         display: flex;
         flex-direction: column;
@@ -636,5 +779,7 @@ div#cards-servicos{
         text-decoration: none;
         font-size: .8rem;
     }
+
 }
+
 
