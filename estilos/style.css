@@ -700,60 +700,54 @@ p.solicitar-servicos:hover{
 
     /*====SECTION SERVIÇOS====*/
 
-      /* garante que título e parágrafo fiquem visíveis acima dos cards */
+      /* seção: título e parágrafo em fluxo normal (visíveis, não sticky) */
     section#Servicos{
-        height: calc(100vh - 90px);
+        height: auto;
+        min-height: calc(100vh - 90px);
         box-sizing: border-box;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: y mandatory;
         background: var(--cor01);
-        padding: 16px;
-    }
-    /* garante espaço e visibilidade do título e parágrafo antes dos cards */
-    section#Servicos{
-        padding: 16px 12px 0;
-        box-sizing: border-box;
+        padding: 16px 12px;
     }
 
-     /* título fixo no topo da seção (sticky) */
     section#Servicos > h2 {
-        position: sticky;
-        top: 8px;
-        z-index: 60; /* acima dos cards */
-        background: rgba(5,26,38,0.95);
-        padding: 10px 12px;
-        margin: 0 0 8px 0;
-        border-radius: 8px;
+        position: static; /* não sticky */
+        top: auto;
+        z-index: 3;
+        background: transparent;
+        padding: 0 6px 8px 6px;
+        margin: 0 0 6px 0;
         text-align: center;
     }
 
-    /* parágrafo abaixo do título, não sticky para não sobrepor o h2 */
     section#Servicos > p {
-        position: relative;
-        z-index: 55;
-        margin: 0 0 20vh 0; /* reserva espaço para os cards iniciarem abaixo */
-        padding: 8px 12px;
+        position: static; /* fica logo abaixo do h2 */
+        z-index: 2;
+        margin: 0 0 18px 0;
+        padding: 0 6px 12px 6px;
         text-align: center;
-        
     }
 
-    /* mantém comportamento dos cards (ajuste se já existir essa configuração) */
+    /* container de cards em coluna, invertido visualmente (último aparece primeiro) */
     div#cards-servicos {
-        display: block;
+        display: flex;
+        flex-direction: column; /* inverte a ordem visual */
         width: 100%;
-        padding-top: 1vh;
+        gap: 18px;
         box-sizing: border-box;
+        padding: 0;
     }
 
-    /* cards sticky com top = 20vh para mostrar 20% do card anterior */
+    /* cada card ocupa praticamente a viewport (visão completa) e usa snap */
     div.card-servicos {
-        position: sticky;
-        top: 20vh;
-        height: 50vh;
-        width: 92%;
+        position: relative;
+        top: auto;
+        min-height: 320px;
+        width: 94%;
         max-width: 520px;
-        margin: 0 auto 6vh;
+        margin: 0 auto;
         scroll-snap-align: start;
         border-radius: 12px;
         overflow: hidden;
@@ -764,21 +758,21 @@ p.solicitar-servicos:hover{
         justify-content: flex-start;
         padding: 18px;
         box-sizing: border-box;
-        z-index: 10; /* abaixo do h2/p */
+        z-index: 1;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
 
     div.card-servicos:last-child {
-        margin-bottom: 28vh;
+        margin-bottom: 28vh; /* espaço final para rolagem permitir visualizar o último card */
     }
 
-    /* tipografia */
+    /* tipografia responsiva nos cards */
     div.card-servicos > h3 { font-size: clamp(1.1rem, 4vw, 1.6rem); }
     div.card-servicos > p,
     div.card-servicos > ul { font-size: clamp(0.95rem, 3.5vw, 1.1rem); }
 
-    /* evitar scroll horizontal */
+    /* evita overflow horizontal */
     html, body {
         overflow-x: hidden;
     }
