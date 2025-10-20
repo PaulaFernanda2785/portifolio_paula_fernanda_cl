@@ -332,6 +332,7 @@ div.card-servicos{
     width: 320px;
     padding: 10px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    border-radius: 10px;
 }
 
 div.card-servicos >h3{
@@ -412,6 +413,102 @@ p.solicitar-servicos:hover{
     background-image: linear-gradient(to right, var(--cor02), var(--cor04));
     transition: background-image 0.3s ease;
 }
+
+/*===SECTION PORTIFOLIO=====*/
+
+section#Portifolios{
+    position: relative;
+    height: 100vh;
+    padding: 0px 30px;
+}
+
+section#Portifolios >h2{
+    color: var(--cor03);
+    font-size: clamp(2rem, 4vw, 2rem);
+}
+
+section#Portifolios >p{
+    color: var(--cor03);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin-top: 50px;
+}
+
+div#cards-portifolios{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    gap: 40px;
+}
+
+div.card-portifolios{
+    background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card02),var(--cor-card03), var(--cor-card01));
+    width: 320px;
+    padding: 0px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    border-radius: 10px;
+}
+
+div.card-portifolios >img{
+    width: 320px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+div.card-portifolios >h3{
+    color: var(--cor03);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    padding: 10px 10px 0px 10px;
+}
+
+div.card-portifolios >p{
+    color: var(--cor03);
+    text-align: left;
+    font-size:clamp(1rem, 1vw, 1rem);
+    margin-top: 10px;
+    height: 70px;
+    line-height: 1.5em;
+    padding: 10px 10px 0px 10px;
+}
+
+div.card-portifolios a{
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--cor06);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+p.ver-projeto >a{
+    position: relative;
+    overflow: hidden;
+}
+
+p.ver-projeto >a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    border-bottom: 1px solid var(--cor06);
+    transition: width 0.3s ease;
+}
+
+p.ver-projeto >a:hover::after{
+    width: 100%;
+    background-color: var(--cor06);
+}
+
+p.ver-projeto >a:hover{
+    color: var(--cor03);
+    transition: background-image 0.3s ease;
+}
+
+
+
 
 
 
