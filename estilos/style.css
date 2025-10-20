@@ -377,7 +377,7 @@ p.preco-servicos{
 p.solicitar-servicos{
     position: relative;
     overflow: hidden;
-    border: 1px transparent black;
+    border: 0px solid black;
     padding: 8px;
     margin-top: -5px;
     border-radius: 8px;

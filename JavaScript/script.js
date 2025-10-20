@@ -1,3 +1,35 @@
+/*=====ANO DO RODAPÉ=====*/
+function setFooterYear() {
+    const year = new Date().getFullYear();
+
+    // tenta encontrar elementos óbvios onde o ano pode estar
+    const target = document.querySelector('#iano, #ano, [data-year]');
+
+    if (target) {
+        target.textContent = year;
+        return;
+    }
+
+    // fallback: insere/atualiza uma <span class="footer-year"> dentro do <footer> <p>
+    const footerP = document.querySelector('footer p');
+    if (!footerP) return;
+    let span = footerP.querySelector('.footer-year');
+    if (!span) {
+        span = document.createElement('span');
+        span.className = 'footer-year';
+        // adiciona um separador visual caso já exista texto
+        if (footerP.textContent.trim()) footerP.appendChild(document.createTextNode(' '));
+        footerP.appendChild(span);
+    }
+    span.textContent = year;
+}
+
+// executa após o carregamento do DOM
+document.addEventListener('DOMContentLoaded', setFooterYear);
+
+
+
+
 /*=====JS - HEADER-TRANPARENTE=====*/
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
