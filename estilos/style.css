@@ -56,7 +56,7 @@ header{
     display: flex;
     justify-content: space-between;
     background-color: var(--cor01);
-    height: 90px;
+    height: 100px;
     width: 100%;
     padding: 10px 0;
     position: fixed;
@@ -305,6 +305,8 @@ section#Servicos{
     position: relative;
     height: 100vh;
     padding: 0px 30px;
+    padding-top: 20px;
+    
 }
 
 section#Servicos >h2{
@@ -419,25 +421,32 @@ p.solicitar-servicos:hover{
 section#Portifolios{
     position: relative;
     height: 100vh;
-    padding: 0px 30px;
+    padding: 0px 30px;background-color: var(--cor01);
+    background-image: url('../imagens/img-fundo05.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 0 6px 15px rgba(0,0,0,0.35);
 }
 
 section#Portifolios >h2{
     color: var(--cor03);
     font-size: clamp(2rem, 4vw, 2rem);
+    padding-top: 20px;
 }
 
 section#Portifolios >p{
     color: var(--cor03);
     font-size: clamp(1rem, 2vw, 1.5rem);
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 div#cards-portifolios{
     position: relative;
     display: flex;
     justify-content: space-around;
-    margin-top: 60px;
+    margin-top: 50px;
     gap: 40px;
 }
 
@@ -872,6 +881,114 @@ p.ver-projeto >a:hover{
     html, body {
         overflow-x: hidden;
     }
+
+    /*====SECTION SERVIÇOS====*/
+
+    section#Portifolios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 16px 12px;
+        min-height: calc(100vh - 90px); /* considera header */
+        background: var(--cor01);
+    }
+
+    /* título e descrição visíveis no topo */
+    section#Portifolios > h2 {
+        width: 100%;
+        margin: 0 0 8px 0;
+        padding: 0 6px;
+        text-align: center;
+        color: var(--cor03);
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    section#Portifolios > p {
+        width: 100%;
+        margin: 0 0 12px 0;
+        padding: 0 6px;
+        text-align: center;
+        color: var(--cor03);
+        font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+        line-height: 1.4;
+    }
+
+    /* container de cards com rolagem interna e snap (um card por vez) */
+    div#cards-portifolios {
+        width: 100%;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: y mandatory;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* cada card ocupa a área visível do container para mostrar um por vez */
+    div.card-portifolios {
+        flex: 0 0 100%;
+        height: calc(100vh - 180px); /* ajuste conforme header + h2/p */
+        max-height: 420px;
+        width: 94%;
+        max-width: 520px;
+        margin: 0 auto;
+        scroll-snap-align: start;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+        background-image: linear-gradient(to right, var(--cor-card01), var(--cor-card02), var(--cor-card03));
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    /* imagem do card responsiva */
+    div.card-portifolios > img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: block;
+    }
+
+    /* texto e botões dentro do card */
+    div.card-portifolios > h3 {
+        color: var(--cor03);
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        margin: 8px 0;
+    }
+
+    div.card-portifolios > p {
+        color: var(--cor03);
+        font-size: clamp(0.95rem, 3.2vw, 1rem);
+        line-height: 1.4;
+        margin: 6px 0;
+    }
+
+    p.ver-projeto > a,
+    div.card-portifolios a {
+        font-size: clamp(0.95rem, 3vw, 1rem);
+    }
+
+    /* espaço final para permitir visualizar último card por completo */
+    div.card-portifolios:last-child {
+        margin-bottom: 24vh;
+    }
+
+    /* evita overflow horizontal no mobile */
+    html, body {
+        overflow-x: hidden;
+    }
+
+/* ...existing code... */
+
 
         footer {
         display: flex;
