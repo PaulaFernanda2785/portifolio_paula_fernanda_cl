@@ -516,6 +516,115 @@ p.ver-projeto >a:hover{
     transition: background-image 0.3s ease;
 }
 
+/*===SECTION PROCESSO=====*/
+
+section#Processos{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px;
+    box-sizing: border-box;
+    background: transparent;
+    color: var(--cor03);
+}
+section#Processos >h2{
+    color: var(--cor03);
+    font-size: clamp(2rem, 4vw, 2rem);
+    padding-top: 20px;
+}
+
+/* layout: lista de processos + imagem */
+div.processos{
+    display: grid;
+    grid-template-columns: 1fr 420px; /* lista à esquerda, imagem à direita */
+    gap: 32px;
+    align-items: start;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* lista sem estilos de browser e com contador customizado */
+div.processos > ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: passos;
+    width: 100%;
+}
+
+/* item com marcador numérico no ::before */
+div.processos > ol > li{
+    position: relative;
+    display: block;
+    padding: 18px 18px 18px 72px; /* espaço para o marcador */
+    margin: 18px 0;
+    border: 0px transparent black;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card03),var(--cor-card02), var(--cor-card01));
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    line-height: 1.4;
+    color: var(--cor03);
+    cursor: default;
+    transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+    overflow: hidden;
+}
+
+/* marcador circular numerado */
+div.processos > ol > li::before{
+    content: counter(passos);
+    counter-increment: passos;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+    background: var(--cor06);
+    color: var(--cor01);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    font-size: 0.95rem;
+}
+
+/* hover / foco para acessibilidade */
+div.processos > ol > li:hover,
+div.processos > ol > li:focus-within,
+div.processos > ol > li:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.28);
+    outline: none;
+}
+
+/* suportar navegação por teclado */
+div.processos > ol > li:focus-visible {
+    outline: 3px solid rgba(54,216,195,0.18);
+}
+
+/* variações visuais opcionais */
+div.processos > ol > li.pri{ /* se usar classes pri/seg */
+    background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card02),var(--cor-card03), var(--cor-card01));
+}
+div.processos > ol > li.seg{
+    background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card03),var(--cor-card02), var(--cor-card01));
+}
+
+/* imagem responsiva e em fluxo normal (sem absolute) */
+div.processos > img{
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+    order: 2;
+    
+}
+
+
 
 
 
@@ -983,7 +1092,6 @@ p.ver-projeto >a:hover{
 
 /* ...existing code... */
 
-
         footer {
         display: flex;
         flex-direction: column;
@@ -1011,6 +1119,56 @@ p.ver-projeto >a:hover{
         font-size: .8rem;
     }
 
+}
+
+/* mobile: empilha e centraliza, imagem abaixo da lista */
+@media (max-width: 900px) {
+    div.processos{
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    div.processos > img{
+        order: 2;
+        width: 92%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    div.processos > ol > li{
+        padding: 14px 14px 14px 64px;
+        margin: 12px 0;
+    }
+
+    /* reduz o tamanho do marcador em telas pequenas */
+    div.processos > ol > li::before{
+        width: 34px;
+        height: 34px;
+        left: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* telas muito pequenas: melhorar legibilidade */
+@media (max-width: 420px) {
+    section#Processos{
+        padding: 28px 12px;
+    }
+    section#Processos >h2{
+        text-align: center;
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+    }
+
+    div.processos > ol > li{
+        padding-left: 40px;
+        font-size: clamp(0.83rem, 3.2vw, 1rem);
+    }
+    div.processos > ol > li::before{
+        width: 20px;
+        height: 20px;
+        left: 10px;
+        font-size: 0.83rem;
+    }
 }
 
 
