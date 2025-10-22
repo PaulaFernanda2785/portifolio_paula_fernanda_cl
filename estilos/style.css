@@ -157,7 +157,7 @@ div#Menu-nav > nav >ul >li >a:hover::after {
 div#Contado{
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right:35px;
 }
 div#Contado >p{
     position: relative;
@@ -597,7 +597,7 @@ p.ver-projeto >a:hover{
         padding-top: 40px;
         min-height: calc(100vh - 90px - 60px); /* 90px header + 60px footer */
         width: 100vw;
-        margin-bottom: 70px; /* espaço para o footer fixo */
+        margin-bottom: 70px; /* espaço para o footer fixo*/ 
     }
 
     div#Menu-nav, div#Contado {
@@ -710,8 +710,6 @@ p.ver-projeto >a:hover{
     div#Portifolio-CL{
     font-size: 1em;
 }
-
-
     main,
     section#home,
     div#img-01,
