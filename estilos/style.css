@@ -628,40 +628,67 @@ div.processos > img{
 /*===SECTION PREÇOS=====*/
 
 section#Precos{
-    height: 100vh;
+    min-height: 100vh;
     max-width: 1200px;
     margin: 0 auto;
     padding: 48px 20px;
     box-sizing: border-box;
-    background: transparent;
-    color: var(--cor03);
     background-color: var(--cor01);
     background-image: url('../imagens/img-fundo01.png');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
-}
-section#Precos >h2{
-    color: var(--cor01);
-    font-size: clamp(2rem, 4vw, 2rem);
+    color: var(--cor03);
+    box-shadow: inset 0 6px 15px rgba(0, 0, 0, 0.556);
+    border-radius: 12px;
 }
 
+/* título e descrição */
+section#Precos > h2{
+    color: var(--cor01); /* corrigido para branco sobre fundo escuro */
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    margin: 0 0 8px 0;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 20px;
+    font-weight: bolder;
+}
+
+/* container de cards: usar grid para melhor responsividade */
 div#cards-precos{
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    align-items: start;
+    margin-top: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 6px;
 }
 
+/* cartão de preço: layout em coluna, consistente */
 div.card-precos{
-    background-image: linear-gradient(to right, var(--cor-card01),var(--cor-card02),var(--cor-card03), var(--cor-card01));
-    width: 320px;
-    padding: 0px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: linear-gradient(to right, var(--cor-card01), var(--cor-card02), var(--cor-card03), var(--cor-card01));
+    padding: 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    border-radius: 12px;
+    width: 100%;
+    min-height: 240px;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    box-sizing: border-box;
 }
+
+/* hover para desktop */
+div.card-precos:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.44);
+}
+
+/* título do card */
 
 div.card-precos >h3{
     color: var(--cor03);
@@ -670,16 +697,15 @@ div.card-precos >h3{
 }
 
 div.card-precos >p{
-    color: var(--cor03);
+    color:  rgba(255,255,255,0.92);
     text-align: left;
-    font-size:clamp(1rem, 2vw, 1.5rem);
-    height: 70px;
+    font-size:clamp(1rem, 1vw, 1.5rem);
     line-height: 1.5em;
     padding: 10px 10px 0px 10px;
 }
 
 div.card-precos >ul{
-    padding: 10px 0px 20px 30px;
+    padding: 0px 0px 10px 30px;
     color: var(--cor03);
     line-height: 1.5em;
 }
@@ -1191,7 +1217,7 @@ div.card-precos >ul{
 
     div.processos > img{
         order: 2;
-        width: 92%;
+        width: 75%;
         max-width: 420px;
         margin: 0 auto;
     }
@@ -1211,8 +1237,9 @@ div.card-precos >ul{
 }
 
 /* telas muito pequenas: melhorar legibilidade */
-@media (max-width: 1110px) {
+@media (max-width: 600px) {
     section#Processos{
+        height: 100vh;
         padding: 28px 12px;
     }
     section#Processos >h2{
@@ -1229,6 +1256,63 @@ div.card-precos >ul{
         height: 20px;
         left: 10px;
         font-size: 0.83rem;
+    }
+}
+
+
+/* ---------- RESPONSIVO: CELULAR ---------- */
+@media (max-width: 600px) {
+    section#Precos{
+        padding: 18px 12px;
+        background-image: url('../imagens/img-fundo01-cel.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: scroll; /* evita problemas no mobile */
+    }
+
+    section#Precos > h2{
+        font-size: clamp(1.2rem, 5vw, 1.6rem);
+        padding-top: 4px;
+        color: var(--cor01);
+    }
+
+    section#Precos > p{
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+        margin-bottom: 14px;
+        padding: 0 6px;
+    }
+
+    div#cards-precos{
+        grid-template-columns: 1fr; /* um card por vez no celular */
+        gap: 18px;
+        padding: 0;
+    }
+
+    div.card-precos{
+        min-height: auto;
+        padding: 14px;
+    }
+
+    div.card-precos .preco-valor{
+        font-size: clamp(1rem, 6vw, 1.4rem);
+    }
+
+    /* garantir legibilidade e evitar overflow */
+    html, body{
+        overflow-x: hidden;
+    }
+}
+
+/* telas médias: melhorar espaçamento quando houver 2 colunas */
+@media (min-width: 601px) and (max-width: 1000px) {
+    div#cards-precos{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    div.card-precos{
+        min-height: 300px;
     }
 }
 
