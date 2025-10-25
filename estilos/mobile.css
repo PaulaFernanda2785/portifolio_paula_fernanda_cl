@@ -20,38 +20,33 @@
 }
 
 /*=====Configuração Global=====*/
-
 *{
     margin: 0px;
     padding: 0px;
     font-family: var(--font-principal);
     box-sizing: border-box;
 }
-
-html{
-    height: 100vh;
-}
-
 body{
     background-color: var(--cor01);
     scroll-behavior: smooth;
     transition: background-color 0.6s ease, color 0.6s ease;
 }
-
 main{
-    width: 400px;
+    display: block;
     margin: auto;
+    width: 90vw;
     padding: 10px;
 }
-
 section{
+    display: block;
+    margin: auto;
     height: 100vh;
+    width:320px
 }
 /* evita que o header fixe cubra a seção ao fazer scroll para âncoras */
 section, [id] {
     scroll-margin-top: 100px; /* ajuste para a altura do seu header (90px) + margem */
 }
-
 /* transição visual para links de navegação */
 div#Menu-nav a,
 footer nav a {
@@ -64,35 +59,36 @@ div#Menu-nav a:hover {
     color: var(--cor03);
     opacity: 0.95;
 }
-
 div#Contato a:focus,
 div#Contato a:active,
 div#Contato a:hover {
     color: var(--cor03);
     opacity: 0.95;
 }
-
+strong{
+    color: var(--cor06);
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 300px;
+}
 /*=====CSS HERADER=====*/
-
 header{
     display: flex;
     justify-content: space-between;
-    background-color: var(--cor01);
     height: 100px;
     width: 100%;
     padding: 10px 0;
     position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
-
 header.transparent {
-    background-color: rgba(5, 26, 38, 0.8);
+    background-color: rgba(5, 26, 38, 0.532);
 }
-
-header >div{
+header > div{
     display: flex;
     align-items: center;
 }
@@ -100,62 +96,140 @@ header >div{
 div#logo-cl{
     display: flex;
     align-items: center;
-    gap: 2px;
     margin-left: 30px;
 }
-
 div#logo-cl > span{
+    position: relative;
     background-color: var(--cor03);
     width: 10px;
     height: 30px;
     border-radius: 7px; 
-    position: relative;
 }
-
 #span-01{
     position: absolute;
-    top: 8px;
+    top: 7.5px;
 }
 #span-02{
     position: absolute;
-    top: -8px;
+    top: -7.5px;
 }
 /* =====Portfólio===== */
 div#Portifolio-CL{
-    display: flex;
+    display: block;
     align-items: center;
     color: var(--cor03);
-    font-size: 1.2em;
+    font-size: 1em;
     margin-left: 20px;
 }
-
 div#Portifolio-CL strong{
     color: var(--cor06);
 }
-
 div#Menu-nav, div#Contado {
     display: none
 }
-
 /*=====SECTION HOME=====*/
 section#home{
-    display: block;
     padding-top: 90px;
 }
 div#img-01 {
     position: relative;
 }
-
 div#img-01 >img{
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 300px;
+    width: 230px;
 }
-
+div#coteudo-01{
+    position: relative;
+}
+div#coteudo-01 > h1{
+    font-size: clamp(1.3rem, 2vw, 1rem);
+    color: var(--cor03);
+    text-align: center;
+    line-height: 1.3em;
+}
+div#coteudo-01 > p{
+    font-size: clamp(1rem, 1vw, 1rem);
+    padding-top: 20px;
+    text-align: center;
+    color: var(--cor03);
+    line-height: 1.3em;
+}
+/*===== EFEITO DE DIGITAÇÃO=====*/
+strong.typing{/* Definindo estilo para o efeito de digitação */
+    display: inline-flex;/* Impedindo quebra de linha */
+    white-space: nowrap;/* Impedindo quebra de linha */
+    overflow: hidden;/* Ocultando o texto que ultrapassa o limite */
+    border-right: 0.12em solid var(--cor05);/* Cursor do efeito de digitação */
+    animation: 
+        typing 3s steps(25, end) 1s infinite alternate,
+        blink-caret 0.7s step-end infinite;/* Efeito de piscar o cursor */
+}
+@keyframes blink-caret{
+    from, to{border-color: transparent;}/* Impedindo quebra de linha */
+    50%{border-color: var(--cor03);}/* Cor do cursor */
+}
+@keyframes typing{
+    from{width: 0ch;}/* Início do efeito de digitação */
+    to{width: 25ch;}/* Fim do efeito de digitação */
+}
+/*=====Termino da digitação=====*/
+div#logo-social{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding-top: 20px;
+}
+div#logo-social img {
+    width: 30px;
+    border-radius: 5px;
+} 
+div#logo-social span img{
+    width: 150px;
+}
+div#logo-social img:hover{
+    box-shadow:  3px 0px 8px rgba(18, 255, 144, 0.200);
+}
 /*=====SECTION SERVIÇOS=====*/
 section#Servicos{
     padding-top: 20px;
     
 }
+
+
+
+
+
+/*===RODAPÉ=====*/
+    footer {
+        display: block;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        background-color: var(--cor01);
+        color: var(--cor03);
+        padding: 15px 0 15px 0;
+        text-align: center;
+        font-size: .8em;
+    }
+    footer strong >a{
+        color: var(--cor06);
+    }
+    footer nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    footer nav ul li {
+        display: block;
+        margin: 0;
+    }
+    footer nav ul li a {
+        color: var(--cor03);
+        font-size: .8rem;
+    }
