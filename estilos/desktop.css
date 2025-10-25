@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/*=====Versão Desktop====*/
+
+@media  screen and (min-width:1025px){
+    /* ====Menu de navegação==== */
+div#Menu-nav{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+div#Menu-nav > nav {
+    display: flex;
+}
+
+div#Menu-nav > nav >ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+div#Menu-nav > nav >ul >li{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+div#Menu-nav > nav >ul >li >a{
+    position: relative;
+    text-decoration: none;
+    color: var(--cor03);
+    overflow: hidden;
+}
+
+div#Menu-nav > nav >ul >li >a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: var(--cor02);
+    transition: width 0.3s ease;
+}
+
+div#Menu-nav > nav >ul >li >a:hover::after {
+    width: 100%;
+}
+/*===== Contato ==== */
+div#Contado{
+    display: flex;
+    align-items: center;
+    margin-right:35px;
+}
+div#Contado >p{
+    position: relative;
+    overflow: hidden;
+    font-size: 1.2em;
+    border: 1px solid var(--cor04);
+    border-radius: 10px;
+    padding: 7px 15px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, var(--cor04), var(--cor02));
+}
+
+div#Contado >p >a{
+    text-decoration: none;
+    color: var(--cor03);
+}
+
+div#Contado >p::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    border-bottom: 2px solid var(--cor06);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+div#Contado >p:hover::after{
+    width: 100%;
+    background-color: var(--cor03);
+}
+
+div#Contado >p:hover{
+    background-image: linear-gradient(to right, var(--cor02), var(--cor04));
+    transition: background-image 0.3s ease;
+}
+    
+}

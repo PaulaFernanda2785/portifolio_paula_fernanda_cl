@@ -13,7 +13,10 @@
     <title>Portfólio-CL</title>
     <meta name="google-site-verification" content="YyiZQtGQk8BjEG7jVwprqmBT8mOwMflGP2vyRjRs_4E" />
     <link rel="shortcut icon" href="imagens/logo_cl-50.ico" type="image/x-icon">
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
+
+    <link rel="stylesheet" href="estilos/mobile.css" media="all">
+    <link rel="stylesheet" href="estilos/desktop.css">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -47,7 +50,7 @@
             </div>
             <div id="Contado">
                 <p>
-                    <a href="#">Contatos</a>
+                    <a href="#Contato">Contatos</a>
                 </p>
             </div>
             <div id="Menu-mobile">
@@ -74,7 +77,7 @@
                     <div id="logo-social">
                         <a href="https://www.linkedin.com/in/paula-fernanda-cl" target="_blank"><img src="imagens/logo-gmail.png" alt="logo-gmail"></a>
                         <a href="https://github.com/PaulaFernanda2785" target="_blank"><img src="imagens/logo-github.png" alt="logo-github"></a>
-                        <a href="https://instagram.com/@engenharia_digital_cl" target="_blank"><img src="imagens/logo-instagram.png" alt="logo-instagram"></a>
+                        <a href="https://www.instagram.com/paula_fernanda_cl/" target="_blank"><img src="imagens/logo-instagram.png" alt="logo-instagram"></a>
                         <a href="https://youtube.com/@paulafernandacorrealima8525" target="_blank"><img src="imagens/logo-youtub.png" alt="logo-youtub"></a>
                         <span><a href="https://wa.me/5591980852556" target="_blank"><img src="imagens/logo-whatsapp.png" alt="logo-whatsapp"></a></span>
                     </div>
@@ -274,10 +277,42 @@
             </div>
         </section>
 
-        <section id="Contado">
-            <div>
+        <section id="Contato">
+            <h2>
+                Vamos conversar?
+            </h2>
+            <p>
+                Conte sua ideia em 2 - 3 linhas e receba uma proposta em até 24h
+            </p>
+            <div class="contato">
+                <form action="contato.php" method="get" autocomplete="on">
+                    <div>
+                        <label for="inome"> Nome</label>
+                        <input type="text" name="nome" id="inome" placeholder="Seu nome" minlength="5" maxlength="30" autocomplete="name" required>
+                    </div>
 
-                
+                    <div>
+                        <label for="iemail">E-mail</label>
+                        <input type="email" name="email" id="iemail" placeholder="voce@exemplo.com" autocomplete="email" required>
+                    </div>
+
+                    <div>
+                        <label for="icelular">Celular</label>
+                        <input type="tel" name="celular" id="icelular" autocomplete="tel" placeholder="DDDxxxxx-xxxx" pattern="^([0-9]{3})[0-9]{4,5}-[0-9]{4}$" required>
+                    </div>
+
+                    <div>
+                        <label for="imeg">Mensagem</label>
+                        <textarea name="meg" id="imeg" placeholder="resuma sua ideia..." rows="5" required></textarea>
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Enviar">
+                        <input type="reset" value="Limpar">
+                    </div>
+                </form>
+                <img src="imagens/img-fundo03.png" alt="img-fundo03"> 
+                <a href="#home"><img src="imagens/seta.png" alt="seta"></a>      
             </div>
         </section>
         

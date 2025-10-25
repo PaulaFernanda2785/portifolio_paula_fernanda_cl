@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+/*=====Versão Mobile Fisrt =====*/
+
+/*=====fontes=====*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*=====Variaves Cores e Fontes===== */
+:root{
+    --cor01:#051a26;
+    --cor02:#007854;
+    --cor03:#ffffff;
+    --cor04:#063433;
+    --cor05:#36d8c3;
+    --cor06:#12ff90;
+    --cor-card01:#051a26;
+    --cor-card02:#233941;
+    --cor-card03:#0b212c;
+    --font-principal: "Montserrat", sans-serif;
+}
+
+/*=====Configuração Global=====*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--font-principal);
+    box-sizing: border-box;
+}
+
+html{
+    height: 100vh;
+}
+
+body{
+    background-color: var(--cor01);
+    scroll-behavior: smooth;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+main{
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+
+section{
+    height: 100vh;
+}
+/* evita que o header fixe cubra a seção ao fazer scroll para âncoras */
+section, [id] {
+    scroll-margin-top: 100px; /* ajuste para a altura do seu header (90px) + margem */
+}
+
+/* transição visual para links de navegação */
+div#Menu-nav a,
+footer nav a {
+    transition: color 0.25s ease, opacity 0.25s ease;
+    will-change: color, opacity;
+}
+div#Menu-nav a:focus,
+div#Menu-nav a:active,
+div#Menu-nav a:hover {
+    color: var(--cor03);
+    opacity: 0.95;
+}
+
+div#Contato a:focus,
+div#Contato a:active,
+div#Contato a:hover {
+    color: var(--cor03);
+    opacity: 0.95;
+}
+
+/*=====CSS HERADER=====*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--cor01);
+    height: 100px;
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.transparent {
+    background-color: rgba(5, 26, 38, 0.8);
+}
+
+header >div{
+    display: flex;
+    align-items: center;
+}
+/* =====Logo====== */
+div#logo-cl{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 30px;
+}
+
+div#logo-cl > span{
+    background-color: var(--cor03);
+    width: 10px;
+    height: 30px;
+    border-radius: 7px; 
+    position: relative;
+}
+
+#span-01{
+    position: absolute;
+    top: 8px;
+}
+#span-02{
+    position: absolute;
+    top: -8px;
+}
+/* =====Portfólio===== */
+div#Portifolio-CL{
+    display: flex;
+    align-items: center;
+    color: var(--cor03);
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+div#Portifolio-CL strong{
+    color: var(--cor06);
+}
+
+div#Menu-nav, div#Contado {
+    display: none
+}
+
+/*=====SECTION HOME=====*/
+section#home{
+    display: block;
+    padding-top: 90px;
+}
+div#img-01 {
+    position: relative;
+}
+
+div#img-01 >img{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 300px;
+}
+
+/*=====SECTION SERVIÇOS=====*/
+section#Servicos{
+    padding-top: 20px;
+    
+}
